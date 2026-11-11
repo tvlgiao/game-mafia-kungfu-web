@@ -7,7 +7,16 @@
     <title>Đại Ca Chạy Đi! — Demo</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
+      <script>
+      (function () {
+        var orig = Element.prototype.requestPointerLock;
+        if (!orig) return;
+        Element.prototype.requestPointerLock = function () {
+          try { var r = orig.apply(this, arguments); if (r && r.catch) r.catch(function () {}); } catch (e) {}
+        };
+      })();
+    </script>
+</head>
   <body>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
@@ -53,12 +62,12 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/48b90b0210211dffc57fd618eb1ffed7.loader.js";
+      var loaderUrl = buildUrl + "/4b19a4d546cde0b11867177365445eac.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/875e003a1204cdd0282dd366cba0e790.data.unityweb",
+        dataUrl: buildUrl + "/808ae0a7f992a815a9aaf7bae5f55ed9.data.unityweb",
         frameworkUrl: buildUrl + "/52d19b3d1c62573a497ef867b290ed56.framework.js.unityweb",
-        codeUrl: buildUrl + "/444b47fedd1a619350fcfa0cea91704b.wasm.unityweb",
+        codeUrl: buildUrl + "/ab5ac6792a5e807f65d8c96575942be9.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Đại Ca Chạy Đi! — Demo",
