@@ -62,12 +62,12 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/c985b9d7105566cd0c67999a9caeb5e1.loader.js";
+      var loaderUrl = buildUrl + "/3552a496150f5848af8931e3872bf6f2.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/b4eac2a31e9ec2ca738396753d2ef7f6.data.unityweb",
-        frameworkUrl: buildUrl + "/28871d4831998b3dd409d37a38c26672.framework.js.unityweb",
-        codeUrl: buildUrl + "/34f982fe432e931dc620a34375e6539a.wasm.unityweb",
+        dataUrl: buildUrl + "/5773cdf6dfcbe83de02b4d5d7e0f8088.data.unityweb",
+        frameworkUrl: buildUrl + "/250a67c76d8c577b28864cd69c3ca753.framework.js.unityweb",
+        codeUrl: buildUrl + "/1005d5213d4e56dc3fe71565673ecfd5.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Đại Ca Chạy Đi! — Demo",
@@ -126,6 +126,7 @@
         createUnityInstance(canvas, config, (progress) => {
           document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
               }).then((unityInstance) => {
+                window.unityInstance = unityInstance;
                 document.querySelector("#unity-loading-bar").style.display = "none";
                 document.querySelector("#unity-fullscreen-button").onclick = () => {
                   unityInstance.SetFullscreen(1);
